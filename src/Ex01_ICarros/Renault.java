@@ -14,9 +14,12 @@ public class Renault extends Carro{
     @Override
     public void freiar() {
         if (getVelocidade() == 0){
-            System.out.println("Já estou parado!\n Minha velocidade está em: " + getVelocidade() + " km/h");
+            System.out.println("Já estou parado!\nMinha velocidade está em: " + getVelocidade() + " km/h");
         } else {
             setVelocidade(getVelocidade() - 5);
+            if (getVelocidade() < 0){
+                setVelocidade(0.0);
+            }
             System.out.println("Freando...\nMinha velocidade está em: " + getVelocidade() + " km/h");
         }
     }

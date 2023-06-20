@@ -12,14 +12,13 @@ public class Fiat extends Carro{
 
     @Override
     public void freiar() {
-        setVelocidade(getVelocidade() - 6);
-        if (getVelocidade() < 0){
-            setVelocidade(0.0);
-            System.out.println("Freando...\nMinha velocidade está em: " + getVelocidade() + " km/h");
-        } else if (getVelocidade() == 0) {
-            System.out.println("Já estou parado!\n Minha velocidade está em: " + getVelocidade() + " km/h");
+        if (getVelocidade() == 0){
+            System.out.println("Já estou parado!\nMinha velocidade está em: " + getVelocidade() + " km/h");
         } else {
             setVelocidade(getVelocidade() - 6);
+            if (getVelocidade() < 0){
+                setVelocidade(0.0);
+            }
             System.out.println("Freando...\nMinha velocidade está em: " + getVelocidade() + " km/h");
         }
     }

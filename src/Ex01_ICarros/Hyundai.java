@@ -12,21 +12,20 @@ public class Hyundai extends Carro{
 
     @Override
     public void freiar() {
-        setVelocidade(getVelocidade() - 2);
-        if (getVelocidade() < 0){
-            setVelocidade(0.0);
-            System.out.println("Freando...\nMinha velocidade está em: " + getVelocidade() + " km/h");
-        } else if (getVelocidade() == 0) {
-            System.out.println("Já estou parado!\n Minha velocidade está em: " + getVelocidade() + " km/h");
+        if (getVelocidade() == 0){
+            System.out.println("Já estou parado!\nMinha velocidade está em: " + getVelocidade() + " km/h");
         } else {
             setVelocidade(getVelocidade() - 2);
+            if (getVelocidade() < 0){
+                setVelocidade(0.0);
+            }
             System.out.println("Freando...\nMinha velocidade está em: " + getVelocidade() + " km/h");
         }
     }
 
     @Override
     public void acelerar() {
-        setVelocidade(getVelocidade() + 12);
+        setVelocidade(getVelocidade() + 15);
         System.out.println("Acelerando...\nMinha velocidade está em: " + getVelocidade() + " km/h");
     }
 }
