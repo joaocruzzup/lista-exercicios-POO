@@ -1,23 +1,19 @@
 package Ex03_Funcionarios;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Funcionario {
     private String nome;
     private LocalDate dataAdmissao;
     private double salario;
     private int id;
-    private static int idContador = 0;
+    private static int idContador = 1;
 
     public Funcionario(){
         setIdContador(getIdContador() + 1);
         setId(getIdContador());
     }
-    // Teste feito com id sem ser estático
-
-//    public Funcionario(){
-//        setId(getId() + 1);
-//    }
 
     public String getNome() {
         return nome;
@@ -32,26 +28,31 @@ public class Funcionario {
     }
 
     public void setDataAdmissao(LocalDate dataAdmissao) {
-        if (dataAdmissao.isAfter(LocalDate.now())){
+        Scanner entrada = new Scanner(System.in);
+        while (dataAdmissao.isAfter(LocalDate.now())){
             System.out.println("Erro: Data de admissão não pode ser posterior a data ");
-            // toDo Perguntar a Carol se é bom colocar Scanner dentro do Set
-            this.dataAdmissao = LocalDate.now();
-        } else{
-            this.dataAdmissao = dataAdmissao;
+            System.out.print("Digite o dia de admissão: ");
+            int dia = entrada.nextInt();
+            System.out.print("Digite o mês de admissão: ");
+            int mes = entrada.nextInt();
+            System.out.print("Digite o ano de admissão: ");
+            int ano = entrada.nextInt();
+            dataAdmissao = LocalDate.of(ano, mes, dia);
         }
-    }
+        this.dataAdmissao = dataAdmissao;}
 
     public double getSalario() {
         return salario;
     }
 
     public void setSalario(double salario) {
-        if (salario < 700.0){
+        Scanner entrada = new Scanner(System.in);
+        while (salario < 700.0){
             System.out.println("Erro: O salário mínimo é R$700,00. Assim, o salário foi redefinido para 700");
-            this.salario = 700.0;
-        } else {
-            this.salario = salario;
+            System.out.print("Digite um salário compatível: ");
+            salario = entrada.nextInt();
         }
+        this.salario = salario;
     }
 
     public int getId() {

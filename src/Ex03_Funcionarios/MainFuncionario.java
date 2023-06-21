@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 public class MainFuncionario {
     public static void main(String[] args) {
+//        Instanciar Local Date com números
+        LocalDate d10 = LocalDate.of(2023, 3, 9);
+
         System.out.println("----- Teste set e get para funcionario -----");
         Funcionario funcionario1 = new Funcionario();
         funcionario1.setNome("João");
@@ -27,5 +30,6 @@ public class MainFuncionario {
 
         Funcionario funcionario3 = new Funcionario();
         System.out.println(funcionario3.getId());
+
     }
 }
