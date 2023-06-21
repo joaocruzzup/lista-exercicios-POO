@@ -4,7 +4,7 @@ Esse repositório é referente ao exercícios da Lista de POO do Programa Catali
 
 ---
 
-# 🪲 O que propõe o exercício?
+# 📋 O que propõe o exercício?
 
 Criar 3 sistemas (no caso, são 3 exercícios) com o uso de gets, sets e com devidos modificadores de acesso, além de realizar testes para saber se as validações estão corretas. Os sistemas são:
 
@@ -12,7 +12,7 @@ Criar 3 sistemas (no caso, são 3 exercícios) com o uso de gets, sets e com dev
 2. Sistema de gerenciamento de bibliotecas, com a funcionalidade de adicionar livros;
 3. Sistema de gerenciamento de funcionários, com uso de datas
 
-# 📟 Pacotes criados
+# 🗂️ Pacotes criados
 
 1. [Sistema de carros](https://github.com/joaocruzzup/lista-exercicios-POO/tree/main/src/Ex01_ICarros) 
 2. [Sistema de biblioteca](https://github.com/joaocruzzup/lista-exercicios-POO/tree/main/src/Ex02_Biblioteca) 
