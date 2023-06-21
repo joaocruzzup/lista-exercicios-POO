@@ -4,32 +4,39 @@ import java.time.LocalDate;
 
 public class MainFuncionario {
     public static void main(String[] args) {
-//        Instanciar Local Date com números
-        LocalDate d10 = LocalDate.of(2023, 3, 9);
 
-        System.out.println("----- Teste set e get para funcionario -----");
+        System.out.println("***** [TESTE] Funcionário com data e salários válidos *****");
         Funcionario funcionario1 = new Funcionario();
         funcionario1.setNome("João");
-        funcionario1.setDataAdmissao(LocalDate.parse("2023-06-19"));
-        funcionario1.setSalario(700);
+        funcionario1.setDataAdmissao(LocalDate.of(2023, 4, 20)); // Data válida
+        funcionario1.setSalario(700); // Salário válido
 
-        System.out.println("Id: " + funcionario1.getId());
-        System.out.println("Nome: " + funcionario1.getNome());
-        System.out.println("Salário: " + funcionario1.getSalario());
-        System.out.println("Data de Admissão: " + funcionario1.getDataAdmissao());
+        imprimirFuncionario(funcionario1);
 
-        System.out.println("\n----- Teste com valores inválidos para salário e data de admissão -----");
-        funcionario1.setSalario(500);
-        funcionario1.setDataAdmissao(LocalDate.parse("2023-07-01"));
-        System.out.println("Salário novo: " + funcionario1.getSalario());
-        System.out.println("Data nova: " + funcionario1.getDataAdmissao());
-
-        System.out.println();
+        System.out.println("\n***** [TESTE] Funcionário com salário válido e data inválida *****");
         Funcionario funcionario2 = new Funcionario();
-        System.out.println(funcionario2.getId());
+        funcionario2.setNome("Carol");
+        funcionario2.setDataAdmissao(LocalDate.of(2023, 12, 20)); // Data inválida
+        funcionario2.setSalario(800); // Salário válido
 
+        imprimirFuncionario(funcionario2);
+
+        System.out.println("\n***** [TESTE] Funcionário com salário inválido e data inválida *****");
         Funcionario funcionario3 = new Funcionario();
-        System.out.println(funcionario3.getId());
+        funcionario2.setNome("Victor");
+        funcionario2.setDataAdmissao(LocalDate.of(2023, 12, 20)); // Data inválida
+        funcionario2.setSalario(500); // Salário inválido
 
+        imprimirFuncionario(funcionario3);
+
+    }
+
+    public static void imprimirFuncionario(Funcionario funcionario){
+        System.out.println("------- Informações do funcionário" + funcionario.getId() + "-------");
+        System.out.println("Id: " + funcionario.getId());
+        System.out.println("Nome: " + funcionario.getNome());
+        System.out.println("Salário: " + funcionario.getSalario());
+        System.out.println("Data de Admissão: " + funcionario.getDataAdmissao());
+        System.out.println("-------------------------------------------");
     }
 }

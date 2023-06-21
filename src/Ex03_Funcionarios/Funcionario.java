@@ -8,7 +8,7 @@ public class Funcionario {
     private LocalDate dataAdmissao;
     private double salario;
     private int id;
-    private static int idContador = 1;
+    private static int idContador = 0;
 
     public Funcionario(){
         setIdContador(getIdContador() + 1);
